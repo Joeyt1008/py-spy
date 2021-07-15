@@ -39,7 +39,7 @@ jobs:
               yum install -y curl && \
               yum install -y dnf && \
               dnf install -y wget && \
-              curl https://sh.rustup.rs -sSf | sh && \
+              yum install -y cargo && \
 
               
               python -m pip install --upgrade pip && \
