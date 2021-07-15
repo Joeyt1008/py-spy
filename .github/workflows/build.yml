@@ -40,8 +40,6 @@ jobs:
               yum-config-manager --enable epel && \
               yum install -y curl wget && \
               yum install -y cargo && \           
-
-              
               python -m pip install --upgrade pip && \
               python --version && \
               uname -m && \
