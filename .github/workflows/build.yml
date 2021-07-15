@@ -39,16 +39,15 @@ jobs:
               yum install -y epel-release && \
               yum-config-manager --enable epel && \
               yum install -y curl wget && \
-              yum install -y cargo && \
-              yum install -y dnf && \
-              dnf install -y wget cargo && \
-              
+              yum install -y cargo && \           
 
               
               python -m pip install --upgrade pip && \
               python --version && \
               uname -m && \
               whoami && \
+              ls && \
+              pwd && \
               cargo build --verbose && \
               cargo test && \
               deactivate'
