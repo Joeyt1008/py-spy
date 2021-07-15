@@ -46,8 +46,7 @@ jobs:
               pwd && \
               ls && \
               cargo --version && \
-              rustup --version && \
-              cargo build --release --verbose --examples && \
+              cargo build --verbose && \
               cargo test && \
               deactivate'
   
