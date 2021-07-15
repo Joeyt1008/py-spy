@@ -45,7 +45,7 @@ jobs:
               whoami && \
               pwd && \
               ls && \
-              cargo build --verbose && \
+              cargo build --release --verbose --examples && \
               cargo test && \
               deactivate'
   
