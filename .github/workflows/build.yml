@@ -39,7 +39,7 @@ jobs:
               yum install -y epel-release && \
               yum-config-manager --enable epel && \
               yum install -y curl cargo && \
-              curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -v -y --default-toolchain none && \
+              curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs && \
               export PATH=$HOME/.cargo/bin:${PATH} && \
               rustup --version && \
               rustup install stable && \
