@@ -45,6 +45,8 @@ jobs:
               whoami && \
               pwd && \
               ls && \
+              cargo --version && \
+              rustup --version && \
               cargo build --release --verbose --examples && \
               cargo test && \
               deactivate'
