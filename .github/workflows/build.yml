@@ -18,7 +18,7 @@ jobs:
       name: Build and Test for arm64
       strategy:
         matrix:
-          pyver: [cp37-cp37m]
+          pyver: [cp38-cp38m]
       runs-on: ubuntu-18.04
       env:
         py: /opt/python/${{ matrix.pyver }}/bin/python
@@ -39,7 +39,7 @@ jobs:
               yum install -y epel-release && \
               yum-config-manager --enable epel && \
               yum install -y curl cargo && \
-              curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs && \
+              curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -v -y --default-toolchain none && \
               export PATH=$HOME/.cargo/bin:${PATH} && \
               rustup --version && \
               rustup install stable && \
