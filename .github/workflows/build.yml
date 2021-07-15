@@ -45,6 +45,7 @@ jobs:
               whoami && \
               pwd && \
               ls && \
+              python setup.py install && \
               cargo build --verbose && \
               cargo test && \
               deactivate'
