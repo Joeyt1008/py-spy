@@ -32,13 +32,15 @@ jobs:
       
         - name: Install and Run tests
           run: |
-            docker run --rm -v ${{ github.workspace }}:/io:rw --workdir=/io \
+            docker run --rm -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
               ${{ env.img }} \
               bash -exc '${{ env.py }} -m pip install virtualenv && ${{ env.py }} -m venv .env && \
               source .env/bin/activate && \
               yum install -y epel-release && \
               yum-config-manager --enable epel && \
-              yum install -y cargo && \
+              yum install -y curl cargo && \
+              curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh && \
+              rustup --version && \
               python -m pip install --upgrade pip && \
               python --version && \
               uname -m && \
