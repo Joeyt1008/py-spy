@@ -36,19 +36,13 @@ jobs:
               ${{ env.img }} \
               bash -exc '${{ env.py }} -m pip install virtualenv && ${{ env.py }} -m venv .env && \
               source .env/bin/activate && \
-              
+              yum install -y epel-release && \
+              yum-config-manager --enable epel && \
+              yum install -y cargo && \
               python -m pip install --upgrade pip && \
               python --version && \
               uname -m && \
               whoami && \
-              
-              yum install -y update && \
-              yum install -y epel-release && \
-              yum-config-manager --enable epel && \ 
-              yum install -y dnf && \
-              dnf install cargo && \
-              ls && \
-              pwd && \
               cargo build --verbose && \
               cargo test && \
               deactivate'
