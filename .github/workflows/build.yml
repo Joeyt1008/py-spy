@@ -18,8 +18,8 @@ jobs:
       name: Build and Test for arm64
       strategy:
         matrix:
-          pyver: [cp37-cp37m]
-      runs-on: ubuntu-18.04
+          pyver: [cp38-cp38m]
+      runs-on: ubuntu-21.10
       env:
         py: /opt/python/${{ matrix.pyver }}/bin/python
         img: arm64v8/ubuntu:21.10
